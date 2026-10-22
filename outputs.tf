@@ -25,5 +25,5 @@ output "oidc_provider_arn" {
 
 output "node_group_name" {
   description = "Name of the managed node group created by the wrapper"
-  value       = module.eks.eks_managed_node_groups["default"].node_group_name
+  value       = try(split(":", module.eks.eks_managed_node_groups["default"].node_group_id)[1], null)
 }

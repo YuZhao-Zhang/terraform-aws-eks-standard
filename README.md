@@ -26,6 +26,8 @@ Only these inputs are part of the wrapper contract:
 - `node_instance_type`
 - `node_count`
 
+The wrapper configures the AWS provider from `region`, which is required for HCP Terraform No-Code runs where the root module must supply provider configuration.
+
 ## Hardcoded Decisions
 
 This wrapper deliberately does not expose the upstream module directly. It hardcodes the following:
